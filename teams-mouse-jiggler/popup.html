@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="nl">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Teams Mouse Jiggler</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+        width: 220px;
+        padding: 12px;
+      }
+      h1 {
+        font-size: 14px;
+        margin: 0 0 8px;
+      }
+      label {
+        display: block;
+        margin: 8px 0 4px;
+        font-size: 12px;
+        color: #333;
+      }
+      input[type="number"] {
+        width: 60px;
+      }
+      .row {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        margin-top: 8px;
+      }
+      .status {
+        font-size: 11px;
+        color: #666;
+        margin-top: 8px;
+      }
+      button {
+        margin-top: 10px;
+        width: 100%;
+        padding: 6px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Teams Mouse Jiggler</h1>
+    <div class="row">
+      <span>Actief</span>
+      <input type="checkbox" id="enabled" />
+    </div>
+    <label for="interval">Interval (minuten)</label>
+    <input type="number" id="interval" min="0.5" step="0.5" value="1" />
+    <button id="jiggleNow">Nu jiggelen</button>
+    <div class="status" id="status"></div>
+    <script src="popup.js"></script>
+  </body>
+</html>
