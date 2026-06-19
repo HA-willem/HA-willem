@@ -15,8 +15,10 @@ async function applyAlarmState() {
   }
 }
 
+const TEAMS_URL_PATTERNS = ["https://teams.microsoft.com/*", "https://teams.cloud.microsoft/*"];
+
 async function jiggleTeamsTabs() {
-  const tabs = await chrome.tabs.query({ url: "https://teams.microsoft.com/*" });
+  const tabs = await chrome.tabs.query({ url: TEAMS_URL_PATTERNS });
   for (const tab of tabs) {
     if (tab.id === undefined) continue;
     try {
